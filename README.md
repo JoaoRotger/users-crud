@@ -1,75 +1,103 @@
+# CRUD de Usuários
 
-# CRUD de Usuários com Node.js, Express e Postgres
+Este projeto é uma aplicação simples de CRUD (Create, Read, Update, Delete) de usuários, composta por:
 
-Este é um projeto de CRUD de usuários utilizando Node.js, Express e Postgres. Ele permite a criação, leitura, atualização e exclusão de usuários em um banco de dados Postgres.
+- Backend em Node.js + Express
+- Frontend em React
 
+---
 
+## 1. Banco de dados
 
+- Esta aplicação utiliza **PostgreSQL** como banco de dados.
+- Certifique-se de que o PostgreSQL está instalado e em execução em sua máquina.
+- Crie um banco de dados com o nome `crud_usuarios` (ou modifique o nome no código conforme necessário).
+- Atualize as credenciais de conexão (host, usuário, senha, porta) no arquivo de configuração do backend (por exemplo, `db.js`, `.env`, ou diretamente onde a conexão é feita).
+- As tabelas necessárias são criadas automaticamente ao iniciar a aplicação, se estiver usando um ORM como Sequelize (verifique se o projeto está configurado para isso).
 
-## Funcionalidades
+---
 
-Criar um novo usuário: Endpoint POST /users
+## 2. Backend
 
-Listar todos os usuários: Endpoint GET /users
+### Requisitos
 
-Buscar um usuário específico: Endpoint GET /users/:id
+- Node.js (versão recomendada: 18 ou superior)
+- npm (gerenciador de pacotes do Node)
 
-Atualizar um usuário: Endpoint PUT /users/:id
+### Instalação
 
-Deletar um usuário: Endpoint DELETE /users/:id
+1. Acesse o diretório do backend:
 
-## Tecnologias
+```
+cd crud-api
+```
 
-Node.js: Ambiente de execução JavaScript no backend
+2. Instale as dependências:
 
-Express: Framework para construção de APIs
-
-Postgres: Banco de dados relacional
-
-pg (node-postgres): Cliente PostgreSQL para Node.js
-
-## Como rodar o projeto
-
-Backend
-
-1. Clone este repositório:
-'''
-git clone https://github.com/JoaoRotger/crud-api.git
-'''
-
-2. Entre na pasta do backend
-'''
-cd crud-usuarios-backend
-'''
-
-3. Instale as dependencias:
-'''
+```
 npm install
-'''
+```
 
-4. Crie o banco de dados no Postgres:
-'''
-CREATE DATABASE crud_usuarios;
-'''
+### Executando o servidor
 
-5. Configure a conexão com o banco de dados:
-
-Abra o arquivo server.js e verifique a string de conexão com o banco de dados Postgres, ajustando conforme necessário (como usuário, senha e nome do banco).
-
-6. Inicie o servidor:
-'''
+```
 npm start
-'''
-O servidor estará rodando em http://localhost:3000.
+```
 
-###Endpoints
+O servidor será iniciado em `http://localhost:3001`.
 
-    POST /users: Criar um novo usuário (Nome e Email obrigatórios).
+---
 
-    GET /users: Listar todos os usuários cadastrados.
+## 3. Frontend
 
-    GET /users/:id: Buscar um usuário específico pelo ID.
+### Requisitos
 
-    PUT /users/:id: Atualizar um usuário pelo ID (nome e email).
+- Node.js
+- npm
 
-    <!-- DELETE /users/:id: Deletar um usuário pelo ID. -->
+### Instalação
+
+1. Acesse o diretório do frontend:
+
+```
+cd crud-frontend
+```
+
+2. Instale as dependências:
+
+```
+npm install
+```
+
+### Executando o frontend
+
+```
+npm start
+```
+
+A aplicação estará disponível em `http://localhost:3000`.
+
+---
+
+## 4. Estrutura de funcionalidades
+
+- **Create**: formulário para criação de novos usuários.
+- **Read**: listagem de todos os usuários cadastrados.
+- **Update**: busca por ID e edição de um usuário existente.
+- **Delete**: busca por ID e exclusão de um usuário.
+
+---
+
+## 5. Uso da aplicação
+
+- Acesse a aplicação em http://localhost:3000
+- Cada botão levará a sua tela para realizar a ação (criar, modificar, listar ou apagar usuarios). Para voltar basta clicar no botão de home no fundo
+
+## 6. Observações
+
+- As chamadas do frontend para o backend são feitas através do arquivo `api.js` localizado na pasta do frontend.
+
+## 7. Proximas atualizações
+
+- Navegação facilitada entre os apções do CRUD
+- UI e interface melhoradas
